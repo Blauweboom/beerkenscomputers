@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Beerkens Computers - Neem contact op voor al uw vragen over computers, laptops en services in Venray.">
+    <meta name="author" content="Beerkens Computers">
+
+    <title>Contact - Beerkens Computers</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/templatemo-leadership-event.css" rel="stylesheet">
+
+    <style>
+        /* Extra styling */
+        .navbar-brand img {
+            height: 40px;
+            width: auto;
+        }
+        
+        .site-footer {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1a2f47 100%);
+            color: #ffffff;
+            padding: 60px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00cfff, transparent);
+        }
+        
+        .footer-brand {
+            color: #ffffff !important;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-brand:hover {
+            color: #00cfff !important;
+        }
+        
+        .footer-info {
+            margin-top: 20px;
+        }
+        
+        .footer-info p {
+            margin-bottom: 10px;
+            color: #b8c5d6;
+        }
+        
+        .footer-info i {
+            color: #00cfff;
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .footer-section h5 {
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: #00cfff;
+        }
+        
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-menu-item {
+            margin-bottom: 12px;
+        }
+        
+        .footer-menu-link {
+            color: #b8c5d6 !important;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 0;
+        }
+        
+        .footer-menu-link:hover {
+            color: #00cfff !important;
+            padding-left: 10px;
+        }
+        
+        .social-links {
+            margin-top: 20px;
+        }
+        
+        .social-icon-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-right: 10px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-icon-link:hover {
+            background-color: #00cfff;
+            color: #0d1b2a;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: #b8c5d6;
+        }
+        
+        .footer-bottom p {
+            margin-bottom: 0;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1a2f47 100%);
+            color: #fff;
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .section-title {
+            color: #0d1b2a;
+            font-weight: bold;
+            margin-bottom: 50px;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        
+        .section-title u {
+            text-decoration: none;
+            border-bottom: 3px solid #00cfff;
+            padding-bottom: 5px;
+        }
+        
+        .navbar {
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-size: 1.3rem;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: #0d1b2a !important;
+            padding: 10px 20px !important;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #00cfff;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 60%;
+        }
+        
+        /* Force active state */
+        .navbar-nav .nav-item .nav-link.active::after {
+            width: 60% !important;
+        }
+        
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #22c55e;
+            transform: scale(1.1);
+            color: white;
+        }
+        
+        .contact-form-section {
+            padding: 60px 0;
+        }
+        
+        .contact-form {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .form-control, .form-select {
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: #00cfff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 207, 255, 0.25);
+        }
+        
+        .form-label {
+            font-weight: 500;
+            color: #0d1b2a;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+        }
+        
+        .btn-submit {
+            background: #00cfff;
+            color: #0d1b2a;
+            border: none;
+            padding: 10px 30px;
+            font-weight: 600;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .btn-submit:hover {
+            background: #0099ff;
+            transform: translateY(-2px);
+            color: white;
+        }
+        
+        .contact-info-box {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            height: 100%;
+        }
+        
+        .contact-info-item {
+            margin-bottom: 20px;
+        }
+        
+        .contact-info-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .contact-info-item i {
+            font-size: 1.5rem;
+            color: #00cfff;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info-item h4 {
+            font-size: 1rem;
+            color: #0d1b2a;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .contact-info-item p {
+            color: #6c757d;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            height: 300px;
+        }
+        
+        .intro-section {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .intro-section .lead {
+            color: #6c757d;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/31629394318" target="_blank" class="whatsapp-btn">
+    <i class="bi-whatsapp"></i>
+</a>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="images/logo.jpg" alt="Beerkens Computers">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="service.html">Service</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tarieven.html">Tarieven</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+    <div class="container">
+        <h1>Contact</h1>
+        <p>Wij staan voor u klaar</p>
+    </div>
+</section>
+
+<!-- INTRO SECTION -->
+<section class="intro-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="mb-4">Neem gerust contact met ons op</h2>
+                <p class="lead">
+                    Heeft u vragen over onze diensten, wilt u een offerte aanvragen of heeft u hulp nodig? 
+                    Wij helpen u graag verder! Vul het contactformulier in of neem direct contact met ons op 
+                    via WhatsApp. We streven ernaar om binnen 24 uur te reageren op uw bericht.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="contact-form-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="contact-form">
+                            <h3 class="mb-4">Stuur ons een bericht</h3>
+                            <form action="mailto:info@beerkenscomputers.nl" method="post" enctype="text/plain">
+                                <div class="mb-2">
+                                    <label for="firstName" class="form-label">Voornaam *</label>
+                                    <input type="text" class="form-control" id="firstName" name="voornaam" required>
+                                </div>
+                                
+                                <div class="mb-2">
+                                    <label for="lastName" class="form-label">Achternaam *</label>
+                                    <input type="text" class="form-control" id="lastName" name="achternaam" required>
+                                </div>
+                                
+                                <div class="mb-2">
+                                    <label for="email" class="form-label">E-mailadres *</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                
+                                <div class="mb-2">
+                                    <label for="phone" class="form-label">Telefoonnummer</label>
+                                    <input type="tel" class="form-control" id="phone" name="telefoon">
+                                </div>
+                                
+                                <div class="mb-2">
+                                    <label for="subject" class="form-label">Onderwerp *</label>
+                                    <select class="form-select" id="subject" name="onderwerp" required>
+                                        <option value="">Selecteer een onderwerp</option>
+                                        <option value="Reparatie aanvragen">Reparatie aanvragen</option>
+                                        <option value="Offerte nieuwe computer">Offerte nieuwe computer</option>
+                                        <option value="Gaming PC samenstellen">Gaming PC samenstellen</option>
+                                        <option value="Windows installatie">Windows installatie</option>
+                                        <option value="Computer APK">Computer APK</option>
+                                        <option value="Back-up service">Back-up service</option>
+                                        <option value="Diagnose aanvragen">Diagnose aanvragen</option>
+                                        <option value="Servicecontract informatie">Servicecontract informatie</option>
+                                        <option value="Algemene vraag">Algemene vraag</option>
+                                        <option value="Klacht">Klacht</option>
+                                        <option value="Anders">Anders</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Uw bericht *</label>
+                                    <textarea class="form-control" id="message" name="bericht" rows="4" required></textarea>
+                                </div>
+                                
+                                <div class="text-end">
+                                    <button type="submit" class="btn btn-submit">
+                                        <i class="bi-send me-2"></i>Verstuur bericht
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-5">
+                        <div class="contact-info-box">
+                            <div class="contact-info-item text-center">
+                                <i class="bi-geo-alt"></i>
+                                <h4>Adres</h4>
+                                <p>Bergweg 4<br>5804 BA Venray</p>
+                            </div>
+                            
+                            <div class="contact-info-item text-center">
+                                <i class="bi-envelope"></i>
+                                <h4>E-mail</h4>
+                                <p>info@beerkenscomputers.nl</p>
+                            </div>
+                            
+                            <div class="contact-info-item text-center">
+                                <i class="bi-whatsapp"></i>
+                                <h4>WhatsApp</h4>
+                                <p>WhatsApp Service</p>
+                            </div>
+                            
+                            <div class="contact-info-item text-center">
+                                <i class="bi-clock"></i>
+                                <h4>Openingstijden</h4>
+                                <p>Uitsluitend op afspraak</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="footer-section">
+                    <h5 class="footer-brand fw-bold text-white mb-4">
+                        Beerkens Computers
+                    </h5>
+                    <div class="footer-info">
+                        <p><i class="bi-geo-alt-fill"></i>Bergweg 4, 5804 BA Venray</p>
+                        <p><i class="bi-envelope-fill"></i>info@beerkenscomputers.nl</p>
+                        <p><i class="bi-building"></i>KVK: 86061984</p>
+                        <p><i class="bi-receipt"></i>BTW: NL004188131B27</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/beerkenscomputers" target="_blank" class="social-icon-link bi-facebook"></a>
+                        <a href="https://wa.me/31629394318" target="_blank" class="social-icon-link bi-whatsapp"></a>
+                        <a href="https://tweakers.net/gallery/298129/aanbod/" target="_blank" class="social-icon-link">
+                            <i class="bi-cpu"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <div class="footer-section">
+                    <h5>Snelle Links</h5>
+                    <ul class="footer-menu">
+                        <li class="footer-menu-item"><a href="index.html" class="footer-menu-link">Home</a></li>
+                        <li class="footer-menu-item"><a href="service.html" class="footer-menu-link">Service</a></li>
+                        <li class="footer-menu-item"><a href="tarieven.html" class="footer-menu-link">Tarieven</a></li>
+                        <li class="footer-menu-item"><a href="contact.html" class="footer-menu-link">Contact</a></li>
+                        <li class="footer-menu-item"><a href="voorwaarden.html" class="footer-menu-link">Algemene Voorwaarden</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <div class="footer-section">
+                    <h5>Openingstijden</h5>
+                    <ul class="footer-menu">
+                        <li class="footer-menu-item">
+                            <span style="color: #b8c5d6;">Uitsluitend op afspraak</span>
+                        </li>
+                    </ul>
+                    <p style="color: #b8c5d6; margin-top: 20px;">
+                        <i class="bi-info-circle me-2"></i>Neem contact op voor het maken van een afspraak
+                    </p>
+                    <div class="mt-4 p-3 rounded" style="background-color: rgba(0, 207, 255, 0.1);">
+                        <p style="color: #00cfff; margin-bottom: 5px; font-weight: 600;">
+                            <i class="bi-star-fill me-1"></i> 4.9 uit 5 sterren
+                        </p>
+                        <p style="color: #b8c5d6; margin-bottom: 0; font-size: 0.9rem;">
+                            Gebaseerd op 524 beoordelingen
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2491.8946784847!2d5.9716!3d51.5276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c74e80d8b5cf39%3A0x0!2sBergweg%204%2C%205804%20BA%20Venray!5e0!3m2!1snl!2snl!4v1" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Beerkens Computers | Alle rechten voorbehouden</p>
+        </div>
+    </div>
+</footer>
+
+<!-- JAVASCRIPT FILES -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/click-scroll.js"></script>
+<script src="js/custom.js"></script>
+
+<script>
+// Verwijder alle active classes en zet alleen op Contact
+$(document).ready(function() {
+    $('.navbar-nav .nav-link').removeClass('active');
+    $('.navbar-nav .nav-link[href="contact.html"]').addClass('active');
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Beerkens Computers - De specialist voor uw computer en laptop in Venray.">
+    <meta name="author" content="Beerkens Computers">
+    <title>Beerkens Computers - De specialist voor uw computer en laptop</title>
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/templatemo-leadership-event.css" rel="stylesheet">
+    <style>
+        /* Extra styling */
+        .navbar-brand img {
+            height: 40px;
+            width: auto;
+        }
+        
+        .site-footer {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1a2f47 100%);
+            color: #ffffff;
+            padding: 60px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00cfff, transparent);
+        }
+        
+        .footer-brand {
+            color: #ffffff !important;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-brand:hover {
+            color: #00cfff !important;
+        }
+        
+        .footer-info {
+            margin-top: 20px;
+        }
+        
+        .footer-info p {
+            margin-bottom: 10px;
+            color: #b8c5d6;
+        }
+        
+        .footer-info i {
+            color: #00cfff;
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .footer-section h5 {
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: #00cfff;
+        }
+        
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-menu-item {
+            margin-bottom: 12px;
+        }
+        
+        .footer-menu-link {
+            color: #b8c5d6 !important;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 0;
+        }
+        
+        .footer-menu-link:hover {
+            color: #00cfff !important;
+            padding-left: 10px;
+        }
+        
+        .social-links {
+            margin-top: 20px;
+        }
+        
+        .social-icon-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-right: 10px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-icon-link:hover {
+            background-color: #00cfff;
+            color: #0d1b2a;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: #b8c5d6;
+        }
+        
+        .footer-bottom p {
+            margin-bottom: 0;
+        }
+        
+        .hero {
+            background: url('images/computer-repair.jpg') center center / cover no-repeat;
+            height: 80vh;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            background: rgba(13,27,42,0.85);
+            padding: 60px 80px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .section-title {
+            color: #0d1b2a;
+            font-weight: bold;
+            margin-bottom: 50px;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        
+        .section-title u {
+            text-decoration: none;
+            border-bottom: 3px solid #00cfff;
+            padding-bottom: 5px;
+        }
+        
+        .service-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 40px 30px;
+            height: 100%;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #00cfff, #0099ff);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .service-card:hover::before {
+            transform: translateX(0);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #00cfff, #0099ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 25px;
+        }
+        
+        .service-card h3 {
+            color: #0d1b2a;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .service-card p {
+            color: #6c757d;
+            line-height: 1.8;
+        }
+        
+        .navbar {
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-size: 1.3rem;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: #0d1b2a !important;
+            padding: 10px 20px !important;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #00cfff;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 60%;
+        }
+        
+        .usp-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .usp-item {
+            text-align: center;
+            padding: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .usp-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .usp-item i {
+            color: #00cfff;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .usp-item:hover i {
+            transform: scale(1.1);
+        }
+        
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #22c55e;
+            transform: scale(1.1);
+            color: white;
+        }
+        
+        .testimonial-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            height: 100%;
+            position: relative;
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .testimonial-card .quote-icon {
+            color: #00cfff;
+            font-size: 3rem;
+            line-height: 1;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+        
+        .testimonial-card .stars {
+            color: #ffc107;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-card p {
+            color: #6c757d;
+            line-height: 1.8;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-card hr {
+            margin: 20px 0 15px;
+            border-color: #f0f0f0;
+        }
+        
+        .testimonial-card .source {
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+<!-- WhatsApp Button -->
+<a href="https://wa.me/31629394318" target="_blank" class="whatsapp-btn">
+    <i class="bi-whatsapp"></i>
+</a>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#section_1">
+            <img src="images/logo.jpg" alt="Beerkens Computers">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#section_1">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="service.html">Service</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tarieven.html">Tarieven</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- HERO -->
+<section class="hero" id="section_1">
+    <div class="hero-content">
+        <h1>DE SPECIALIST VOOR UW COMPUTER EN LAPTOP</h1>
+        <p>REPARATIE • VERKOOP • INSTALLATIE • ADVIES</p>
+    </div>
+</section>
+<!-- USP BLOKKEN -->
+<section class="py-5 usp-section" id="usp">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="usp-item">
+                    <i class="bi-truck display-4 mb-3"></i>
+                    <h5><strong>Snelle verzending</strong></h5>
+                    <p>Binnen 24 uur verzonden</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="usp-item">
+                    <i class="bi-shield-check display-4 mb-3"></i>
+                    <h5><strong>Garantie</strong></h5>
+                    <p>Altijd garantie op uw aankoop</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="usp-item">
+                    <i class="bi-chat-dots display-4 mb-3"></i>
+                    <h5><strong>Tevredenheidsgarantie</strong></h5>
+                    <p>Persoonlijk en snel contact</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- OVER ONS -->
+<section class="py-5" id="over-ons">
+    <div class="container">
+        <h2 class="section-title">Over <u>Ons</u></h2>
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="about-content">
+                    <p class="lead text-center mb-5">Met ruim 15 jaar ervaring in het vak is Beerkens Computers dé specialist in Venray en omgeving voor al uw computer- en laptopbehoeften.</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <h4 class="mb-3">Onze Expertise</h4>
+                            <p>Beerkens Computers is gespecialiseerd in de inkoop en verkoop van computers en laptops. Of u nu op zoek bent naar een gloednieuwe gaming PC, een betrouwbare werkcomputer of een betaalbare refurbished laptop, wij hebben voor ieder budget en elke behoefte de perfecte oplossing.</p>
+                            <p>Naast verkoop bieden wij professionele reparatiediensten voor zowel computers als laptops. Van hardware-upgrades tot het oplossen van softwareproblemen, ons ervaren team staat voor u klaar.</p>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <h4 class="mb-3">Waarom Kiezen voor Beerkens?</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi-check-circle-fill text-primary me-2"></i> 15+ jaar ervaring in de branche</li>
+                                <li class="mb-2"><i class="bi-check-circle-fill text-primary me-2"></i> Persoonlijke service op afspraak</li>
+                                <li class="mb-2"><i class="bi-check-circle-fill text-primary me-2"></i> Eerlijk advies zonder verkooppraatjes</li>
+                                <li class="mb-2"><i class="bi-check-circle-fill text-primary me-2"></i> Uitgebreide garantie op alle producten</li>
+                                <li class="mb-2"><i class="bi-check-circle-fill text-primary me-2"></i> Snelle en vakkundige reparaties</li>
+                                <li class="mb-2"><i class="bi-check-circle-fill text-primary me-2"></i> Volledige software-installatie service</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-5 p-4 bg-light rounded">
+                        <h4 class="mb-3">Klantbeoordeling</h4>
+                        <div class="rating-info">
+                            <div class="d-flex justify-content-center align-items-center mb-2">
+                                <span class="display-4 text-primary fw-bold me-2">4.9</span>
+                                <div class="text-warning">
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-fill"></i>
+                                </div>
+                            </div>
+                            <p class="mb-0">Gebaseerd op <strong>524 beoordelingen</strong> op Tweakers</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-center mt-4">Bij Beerkens Computers draait alles om kwaliteit, betrouwbaarheid en persoonlijke service. We nemen de tijd voor elke klant en zorgen ervoor dat u met de juiste oplossing naar huis gaat. Of het nu gaat om een nieuwe aanschaf, een reparatie of advies, u bent bij ons aan het juiste adres!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- KLANTBEOORDELINGEN -->
+<section class="py-5 bg-light" id="beoordelingen">
+    <div class="container">
+        <h2 class="section-title">Wat onze klanten <u>zeggen</u></h2>
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="testimonial-card">
+                    <i class="bi-quote quote-icon"></i>
+                    <div class="stars">
+                        <i class="bi-star-fill"></i>
+                        <i class="bi-star-fill"></i>
+                        <i class="bi-star-fill"></i>
+                        <i class="bi-star-fill"></i>
+                        <i class="bi-star-fill"></i>
+                    </div>
+                    <p>"Ik kocht onlangs een pc en ben enorm tevreden over het hele proces. De communicatie met Bram verliep vlot en duidelijk. De levering was ook perfect in orde (naar België). Alles was netjes verpakt en klaar voor gebruik."</p>
+                    <hr>
+                    <p class="source mb-0">Via Tweakers</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="testimonial-card">
+                    <i class="bi-quote quote-icon"></i>
+                    <div class="stars">
+                        <i class="bi-star-fill"></i>
+                        <i class="bi-star-fill"></i>
+                        <i class="bi-star-fill"></i>
+                        <i class="bi-star-fill"></i>
+                        <i class="bi-star-fill"></i>
+                    </div>
+                    <p>"Topservice, netjes ingepakt opgestuurd. Plug en play."</p>
+                    <hr>
+                    <p class="source mb-0">Via Tweakers</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="testimonial-card">
+                    <i class="bi-quote quote-icon"></i>
+                    <div class="stars">
+                        <i class="bi-star-fill"></i>
+                        <i class="bi-star-fill"></i>
+                        <i class="bi-star-fill"></i>
+                        <i class="bi-star-fill"></i>
+                        <i class="bi-star-fill"></i>
+                    </div>
+                    <p>"Game PC voor mijn zoon gekocht van Bram. Ik was wat bezorgd om een complete pc te laten opsturen, maar PC werd uitstekend verpakt en verzekerd bezord. De pc is zorgvuldigd geassembleerd en was nagenoeg in niewstaat. Prima om zaken mee te doen."</p>
+                    <hr>
+                    <p class="source mb-0">Via Tweakers - Refurbished</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="https://tweakers.net/gallery/298129/aanbod/" target="_blank" class="btn btn-primary btn-lg">
+                <i class="bi-cpu me-2"></i>Bekijk alle 524 beoordelingen op Tweakers
+            </a>
+        </div>
+    </div>
+</section>
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="footer-section">
+                    <h5 class="footer-brand fw-bold text-white mb-4">
+                        Beerkens Computers
+                    </h5>
+                    <div class="footer-info">
+                        <p><i class="bi-geo-alt-fill"></i>Bergweg 4, 5804 BA Venray</p>
+                        <p><i class="bi-envelope-fill"></i>info@beerkenscomputers.nl</p>
+                        <p><i class="bi-building"></i>KVK: 86061984</p>
+                        <p><i class="bi-receipt"></i>BTW: NL004188131B27</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/beerkenscomputers" target="_blank" class="social-icon-link bi-facebook"></a>
+                        <a href="https://wa.me/31629394318" target="_blank" class="social-icon-link bi-whatsapp"></a>
+                        <a href="https://tweakers.net/gallery/298129/aanbod/" target="_blank" class="social-icon-link">
+                            <i class="bi-cpu"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <div class="footer-section">
+                    <h5>Snelle Links</h5>
+                    <ul class="footer-menu">
+                        <li class="footer-menu-item"><a href="#section_1" class="footer-menu-link">Home</a></li>
+                        <li class="footer-menu-item"><a href="service.html" class="footer-menu-link">Service</a></li>
+                        <li class="footer-menu-item"><a href="tarieven.html" class="footer-menu-link">Tarieven</a></li>
+                        <li class="footer-menu-item"><a href="contact.html" class="footer-menu-link">Contact</a></li>
+                        <li class="footer-menu-item"><a href="voorwaarden.html" class="footer-menu-link">Algemene Voorwaarden</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <div class="footer-section">
+                    <h5>Openingstijden</h5>
+                    <ul class="footer-menu">
+                        <li class="footer-menu-item">
+                            <span style="color: #b8c5d6;">Uitsluitend op afspraak</span>
+                        </li>
+                    </ul>
+                    <p style="color: #b8c5d6; margin-top: 20px;">
+                        <i class="bi-info-circle me-2"></i>Neem contact op voor het maken van een afspraak
+                    </p>
+                    <div class="mt-4 p-3 rounded" style="background-color: rgba(0, 207, 255, 0.1);">
+                        <p style="color: #00cfff; margin-bottom: 5px; font-weight: 600;">
+                            <i class="bi-star-fill me-1"></i> 4.9 uit 5 sterren
+                        </p>
+                        <p style="color: #b8c5d6; margin-bottom: 0; font-size: 0.9rem;">
+                            Gebaseerd op 524 beoordelingen
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2491.8946784847!2d5.9716!3d51.5276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c74e80d8b5cf39%3A0x0!2sBergweg%204%2C%205804%20BA%20Venray!5e0!3m2!1snl!2snl!4v1" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Beerkens Computers | Alle rechten voorbehouden</p>
+        </div>
+    </div>
+</footer>
+<!-- JAVASCRIPT FILES -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/click-scroll.js"></script>
+<script src="js/custom.js"></script>
+
+<script>
+// Verwijder alle active classes en zet alleen op Home
+$(document).ready(function() {
+    $('.navbar-nav .nav-link').removeClass('active');
+    $('.navbar-nav .nav-link[href="#section_1"]').addClass('active');
+});
+</script>
+
+</body>
+</html>

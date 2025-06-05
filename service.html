@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Beerkens Computers - Service en onderhoud voor uw computer en laptop in Venray.">
+    <meta name="author" content="Beerkens Computers">
+
+    <title>Service - Beerkens Computers</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/templatemo-leadership-event.css" rel="stylesheet">
+
+    <style>
+        /* Extra styling */
+        .navbar-brand img {
+            height: 40px;
+            width: auto;
+        }
+        
+        .site-footer {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1a2f47 100%);
+            color: #ffffff;
+            padding: 60px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00cfff, transparent);
+        }
+        
+        .footer-brand {
+            color: #ffffff !important;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-brand:hover {
+            color: #00cfff !important;
+        }
+        
+        .footer-info {
+            margin-top: 20px;
+        }
+        
+        .footer-info p {
+            margin-bottom: 10px;
+            color: #b8c5d6;
+        }
+        
+        .footer-info i {
+            color: #00cfff;
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .footer-section h5 {
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: #00cfff;
+        }
+        
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-menu-item {
+            margin-bottom: 12px;
+        }
+        
+        .footer-menu-link {
+            color: #b8c5d6 !important;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 0;
+        }
+        
+        .footer-menu-link:hover {
+            color: #00cfff !important;
+            padding-left: 10px;
+        }
+        
+        .social-links {
+            margin-top: 20px;
+        }
+        
+        .social-icon-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-right: 10px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-icon-link:hover {
+            background-color: #00cfff;
+            color: #0d1b2a;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: #b8c5d6;
+        }
+        
+        .footer-bottom p {
+            margin-bottom: 0;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1a2f47 100%);
+            color: #fff;
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .section-title {
+            color: #0d1b2a;
+            font-weight: bold;
+            margin-bottom: 50px;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        
+        .section-title u {
+            text-decoration: none;
+            border-bottom: 3px solid #00cfff;
+            padding-bottom: 5px;
+        }
+        
+        .service-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 25px 20px;
+            height: 100%;
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #f0f0f0;
+            text-align: center;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #00cfff, #0099ff);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card:hover::before {
+            transform: translateX(0);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #00cfff, #0099ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin: 0 auto 15px;
+        }
+        
+        .service-card h3 {
+            color: #0d1b2a;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+        }
+        
+        .service-card p {
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+        
+        .price-tag {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #00cfff;
+            margin-bottom: 8px;
+        }
+        
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+            text-align: left;
+        }
+        
+        .service-features li {
+            padding: 5px 0;
+            padding-left: 22px;
+            position: relative;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .service-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: #22c55e;
+        }
+        
+        .navbar {
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-size: 1.3rem;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: #0d1b2a !important;
+            padding: 10px 20px !important;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #00cfff;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 60%;
+        }
+        
+        /* Force active state */
+        .navbar-nav .nav-item .nav-link.active::after {
+            width: 60% !important;
+        }
+        
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #22c55e;
+            transform: scale(1.1);
+            color: white;
+        }
+        
+        .contract-section {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+            margin-top: 60px;
+        }
+        
+        .contract-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px 25px;
+            text-align: center;
+            height: 100%;
+            transition: all 0.3s ease;
+            border: 2px solid #f0f0f0;
+            position: relative;
+        }
+        
+        .contract-card.popular {
+            border-color: #00cfff;
+            transform: scale(1.02);
+        }
+        
+        .contract-card.popular::before {
+            content: 'Populair';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #0d1b2a;
+            color: white;
+            padding: 4px 16px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .contract-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .contract-card.popular:hover {
+            transform: scale(1.02) translateY(-3px);
+        }
+        
+        .contract-price {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0d1b2a;
+            margin: 15px 0;
+        }
+        
+        .contract-price small {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #6c757d;
+        }
+        
+        .btn-contract {
+            background: #0d1b2a;
+            color: white;
+            padding: 10px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .btn-contract:hover {
+            background: #00cfff;
+            color: #0d1b2a;
+            transform: translateY(-2px);
+        }
+        
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/31629394318" target="_blank" class="whatsapp-btn">
+    <i class="bi-whatsapp"></i>
+</a>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="images/logo.jpg" alt="Beerkens Computers">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="service.html">Service</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tarieven.html">Tarieven</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+    <div class="container">
+        <h1>Onze Services</h1>
+        <p>Professionele computer services voor particulieren en bedrijven</p>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-10 mx-auto text-center">
+                <p class="lead">We bieden verschillende servicecontracten aan, van eenvoudige ondersteuning tot uitgebreide pakketten voor gebruikers die meer persoonlijke aandacht nodig hebben, inclusief thuisbezoeken. De prijzen en details van deze contracten vind je op deze pagina. Heb je hulp nodig bij het kiezen van het contract dat het best bij jou past? Neem dan gerust contact met ons op voor advies.</p>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Onze <u>Diensten</u></h2>
+        
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi-windows"></i>
+                    </div>
+                    <h3>Windows installatie</h3>
+                    <p class="price-tag">Vanaf €59,99</p>
+                    <p>Wij verzorgen een volledige Windows-installatie, afgestemd op de compatibiliteit van het systeem en de voorkeur van de klant.</p>
+                    <ul class="service-features">
+                        <li>Nieuwste updates geïnstalleerd</li>
+                        <li>Optimale instellingen voor snelheid</li>
+                        <li>Veiligheid en gebruiksgemak</li>
+                        <li>Persoonlijke voorkeuren ingesteld</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi-tools"></i>
+                    </div>
+                    <h3>Computer APK</h3>
+                    <p class="price-tag">Vanaf €79,99</p>
+                    <p>Onze computer APK is een uitgebreide onderhoudsbeurt voor uw pc of laptop. Een complete check-up voor optimale prestaties.</p>
+                    <ul class="service-features">
+                        <li>Hardware en software controle</li>
+                        <li>Onnodige bestanden verwijderen</li>
+                        <li>Updates en optimalisaties</li>
+                        <li>Fysieke reiniging van binnen</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi-cloud-arrow-down"></i>
+                    </div>
+                    <h3>Back-up service</h3>
+                    <p class="price-tag">Vanaf €99</p>
+                    <p>Wij maken een volledige back-up van uw bestanden, zoals documenten, foto's en andere belangrijke gegevens.</p>
+                    <ul class="service-features">
+                        <li>Volledige gegevensback-up</li>
+                        <li>Veilige bewaring van bestanden</li>
+                        <li>Bescherming tegen dataverlies</li>
+                        <li>Eenvoudig herstel mogelijk</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi-bug"></i>
+                    </div>
+                    <h3>Diagnose service</h3>
+                    <p class="price-tag">€40</p>
+                    <p>Wij voeren een grondige diagnose uit om het probleem nauwkeurig vast te stellen. Vaste prijs, duidelijke rapportage.</p>
+                    <ul class="service-features">
+                        <li>Grondige probleemanalyse</li>
+                        <li>Duidelijk overzicht bevindingen</li>
+                        <li>Advies vervolgstappen</li>
+                        <li>Transparante vaste prijs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICE CONTRACTEN -->
+<section class="contract-section">
+    <div class="container">
+        <h2 class="section-title">Onze service <u>contracten</u></h2>
+        
+        <div class="text-center mb-5">
+            <h3>Waarom kiezen voor een onderhoudscontract?</h3>
+            <p class="lead">Elke computer krijgt op termijn te maken met vertraging, stofophoping, ongewenste reclame, virussen of andere problemen.<br>
+            Door regelmatig onderhoud voorkomt u veel van deze ongemakken en verlengt u de levensduur van uw systeem.<br>
+            Wacht u te lang, dan kunnen de herstelkosten flink oplopen. Regelmatig onderhoud is dus geen luxe, maar een slimme investering.</p>
+        </div>
+        
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-8 text-center">
+                <p class="text-muted">Hoe uitgebreider het contract, hoe hoger uw voordeel – met kortingen tot wel 50% op het reguliere uurtarief.</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="contract-card">
+                    <h3 class="text-primary">Basis</h3>
+                    <p class="text-muted">Essentiële ondersteuning</p>
+                    <div class="contract-price">
+                        €13,99<small>/maand</small>
+                    </div>
+                    <ul class="service-features text-start">
+                        <li>Voor één PC of Laptop</li>
+                        <li>Gratis hulp via WhatsApp & e-mail</li>
+                        <li>25% korting op aanvullende ondersteuning</li>
+                        <li>Eens per jaar gratis APK op locatie</li>
+                    </ul>
+                    <a href="contact.html" class="btn-contract">Abonneer nu</a>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="contract-card popular">
+                    <h3 class="text-primary">Plus</h3>
+                    <p class="text-muted">Meer gemak, extra voordeel</p>
+                    <div class="contract-price">
+                        €19,99<small>/maand</small>
+                    </div>
+                    <ul class="service-features text-start">
+                        <li>Alles van het Basis Pakket</li>
+                        <li>Elke 6 maanden gratis APK in onze werkplaats</li>
+                        <li>35% korting op aanvullende ondersteuning</li>
+                    </ul>
+                    <a href="#" class="btn-contract">Abonneer nu</a>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="contract-card">
+                    <h3 class="text-danger">Premium</h3>
+                    <p class="text-muted">Uitgebreide service, ook bij u thuis</p>
+                    <div class="contract-price">
+                        €29,99<small>/maand</small>
+                    </div>
+                    <ul class="service-features text-start">
+                        <li>Alles van het Plus Pakket</li>
+                        <li>50% korting op aanvullende ondersteuning</li>
+                        <li>Thuisservice als hulp op afstand niet voldoende is</li>
+                    </ul>
+                    <a href="#" class="btn-contract">Abonneer nu</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <p class="text-muted" style="font-size: 0.9rem;">
+                    De abonnementskosten worden maandelijks automatisch via incasso afgeschreven. 
+                    Deze kosten staan los van eventuele aanvullende werkzaamheden. 
+                    Afhankelijk van uw gekozen pakket, profiteert u van kortingen tot 50% op deze extra diensten.
+                </p>
+            </div>
+        </div>
+        
+        <!-- CONTACT CTA -->
+        <div class="row mt-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <div class="p-5 rounded" style="background-color: #ffffff;">
+                    <h3 class="mb-3">Hulp nodig bij het kiezen?</h3>
+                    <p class="lead mb-4">Neem gerust contact met ons op voor persoonlijk advies over het juiste servicecontract</p>
+                    <a href="contact.html" class="btn btn-primary btn-lg" style="background-color: #00cfff; border-color: #00cfff; color: #0d1b2a; font-weight: 600; padding: 12px 40px;">
+                        <i class="bi-envelope me-2"></i>Neem contact op
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="footer-section">
+                    <h5 class="footer-brand fw-bold text-white mb-4">
+                        Beerkens Computers
+                    </h5>
+                    <div class="footer-info">
+                        <p><i class="bi-geo-alt-fill"></i>Bergweg 4, 5804 BA Venray</p>
+                        <p><i class="bi-envelope-fill"></i>info@beerkenscomputers.nl</p>
+                        <p><i class="bi-building"></i>KVK: 86061984</p>
+                        <p><i class="bi-receipt"></i>BTW: NL004188131B27</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/beerkenscomputers" target="_blank" class="social-icon-link bi-facebook"></a>
+                        <a href="https://wa.me/31629394318" target="_blank" class="social-icon-link bi-whatsapp"></a>
+                        <a href="https://tweakers.net/gallery/298129/aanbod/" target="_blank" class="social-icon-link">
+                            <i class="bi-cpu"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <div class="footer-section">
+                    <h5>Snelle Links</h5>
+                    <ul class="footer-menu">
+                        <li class="footer-menu-item"><a href="index.html" class="footer-menu-link">Home</a></li>
+                        <li class="footer-menu-item"><a href="service.html" class="footer-menu-link">Service</a></li>
+                        <li class="footer-menu-item"><a href="tarieven.html" class="footer-menu-link">Tarieven</a></li>
+                        <li class="footer-menu-item"><a href="contact.html" class="footer-menu-link">Contact</a></li>
+                        <li class="footer-menu-item"><a href="voorwaarden.html" class="footer-menu-link">Algemene Voorwaarden</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <div class="footer-section">
+                    <h5>Openingstijden</h5>
+                    <ul class="footer-menu">
+                        <li class="footer-menu-item">
+                            <span style="color: #b8c5d6;">Uitsluitend op afspraak</span>
+                        </li>
+                    </ul>
+                    <p style="color: #b8c5d6; margin-top: 20px;">
+                        <i class="bi-info-circle me-2"></i>Neem contact op voor het maken van een afspraak
+                    </p>
+                    <div class="mt-4 p-3 rounded" style="background-color: rgba(0, 207, 255, 0.1);">
+                        <p style="color: #00cfff; margin-bottom: 5px; font-weight: 600;">
+                            <i class="bi-star-fill me-1"></i> 4.9 uit 5 sterren
+                        </p>
+                        <p style="color: #b8c5d6; margin-bottom: 0; font-size: 0.9rem;">
+                            Gebaseerd op 524 beoordelingen
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2491.8946784847!2d5.9716!3d51.5276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c74e80d8b5cf39%3A0x0!2sBergweg%204%2C%205804%20BA%20Venray!5e0!3m2!1snl!2snl!4v1" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Beerkens Computers | Alle rechten voorbehouden</p>
+        </div>
+    </div>
+</footer>
+
+<!-- JAVASCRIPT FILES -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/click-scroll.js"></script>
+<script src="js/custom.js"></script>
+
+<script>
+// Verwijder alle active classes en zet alleen op Service
+$(document).ready(function() {
+    $('.navbar-nav .nav-link').removeClass('active');
+    $('.navbar-nav .nav-link[href="service.html"]').addClass('active');
+});
+</script>
+
+</body>
+</html>
