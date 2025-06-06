@@ -1,0 +1,868 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Beerkens Computers - Professionele webdesign services voor statische websites in Venray. Vanaf €500 voor een complete website.">
+    <meta name="author" content="Beerkens Computers">
+    <title>Webdesign - Beerkens Computers</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        /* Extra styling */
+        .navbar-brand img {
+            height: 40px;
+            width: auto;
+        }
+        
+        /* Custom hamburger menu styling */
+        .navbar-toggler {
+            border: none;
+            padding: 4px 12px;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        /* Fallback hamburger icon */
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        /* Mobile menu styling */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background-color: white;
+                padding: 20px;
+                margin-top: 10px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                border-radius: 10px;
+            }
+            
+            .navbar-nav .nav-link {
+                padding: 10px 0 !important;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            
+            .navbar-nav .nav-link:last-child {
+                border-bottom: none;
+            }
+        }
+        
+        .site-footer {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1a2f47 100%);
+            color: #ffffff;
+            padding: 60px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00cfff, transparent);
+        }
+        
+        .footer-brand {
+            color: #ffffff !important;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-brand:hover {
+            color: #00cfff !important;
+        }
+        
+        .footer-info {
+            margin-top: 20px;
+        }
+        
+        .footer-info p {
+            margin-bottom: 10px;
+            color: #b8c5d6;
+        }
+        
+        .footer-info i {
+            color: #00cfff;
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .footer-section h5 {
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: #00cfff;
+        }
+        
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-menu-item {
+            margin-bottom: 12px;
+        }
+        
+        .footer-menu-link {
+            color: #b8c5d6 !important;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 0;
+        }
+        
+        .footer-menu-link:hover {
+            color: #00cfff !important;
+            padding-left: 10px;
+        }
+        
+        .social-links {
+            margin-top: 20px;
+        }
+        
+        .social-icon-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-right: 10px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-icon-link:hover {
+            background-color: #00cfff;
+            color: #0d1b2a;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: #b8c5d6;
+        }
+        
+        .footer-bottom p {
+            margin-bottom: 0;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1a2f47 100%);
+            color: #fff;
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .section-title {
+            color: #0d1b2a;
+            font-weight: bold;
+            margin-bottom: 50px;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        
+        .section-title u {
+            text-decoration: none;
+            border-bottom: 3px solid #00cfff;
+            padding-bottom: 5px;
+        }
+        
+        .pricing-table {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-table:hover {
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+        
+        .pricing-table-header {
+            background: #f8f9fa;
+            color: #0d1b2a;
+            padding: 20px 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .pricing-table-header i {
+            font-size: 1.5rem;
+            color: #00cfff;
+        }
+        
+        .pricing-table-header h3 {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        
+        .pricing-table-body {
+            padding: 20px 25px;
+        }
+        
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f8f9fa;
+        }
+        
+        .price-row:last-child {
+            border-bottom: none;
+        }
+        
+        .price-row .service-name {
+            color: #6c757d;
+            font-size: 0.95rem;
+        }
+        
+        .price-row .service-price {
+            color: #0d1b2a;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .price-category {
+            background: #f8f9fa;
+            padding: 10px 15px;
+            margin: -20px -25px 15px;
+            font-weight: 500;
+            color: #0d1b2a;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .description-text {
+            color: #6c757d;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .intro-section {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .intro-section .lead {
+            color: #6c757d;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .navbar {
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-size: 1.3rem;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: #0d1b2a !important;
+            padding: 10px 20px !important;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 20px;
+            right: 20px;
+            width: auto;
+            height: 2px;
+            background-color: #00cfff;
+            transition: all 0.3s ease;
+            transform: scaleX(0);
+            transform-origin: center;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            transform: scaleX(1);
+        }
+        
+        /* Force active state */
+        .navbar-nav .nav-item .nav-link.active::after {
+            transform: scaleX(1) !important;
+        }
+        
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #22c55e;
+            transform: scale(1.1);
+            color: white;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            color: #6c757d;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00cfff;
+            font-weight: bold;
+        }
+        
+        .custom-service-section {
+            padding: 60px 0;
+            text-align: center;
+            background-color: #ffffff;
+            margin-bottom: -40px;
+        }
+        
+        .custom-service-section h2 {
+            color: #0d1b2a;
+            margin-bottom: 25px;
+        }
+        
+        .custom-service-section .lead {
+            margin-bottom: 35px;
+            color: #6c757d;
+        }
+        
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            height: 300px;
+        }
+        
+        .info-box {
+            background-color: #e8f6ff;
+            border-left: 4px solid #00cfff;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .info-box h4 {
+            color: #0d1b2a;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .info-box p {
+            color: #6c757d;
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Card hover effects */
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+        }
+        
+        /* Responsive aanpassingen */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .price-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .price-row .service-price {
+                font-size: 1.2rem;
+                color: #00cfff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/31629394318" target="_blank" class="whatsapp-btn">
+    <i class="bi-whatsapp"></i>
+</a>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="images/logo.jpg" alt="Beerkens Computers">
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="service.html">Service</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tarieven.html">Tarieven</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="webdesign.html">Webdesign</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+    <div class="container">
+        <h1>Webdesign Services</h1>
+        <p>Professionele statische websites voor uw bedrijf</p>
+    </div>
+</section>
+
+<!-- INTRO SECTION -->
+<section class="intro-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="mb-4">Statische websites met moderne uitstraling</h2>
+                <p class="lead">
+                    Een professionele website is tegenwoordig onmisbaar voor elk bedrijf. 
+                    Wij ontwikkelen snelle, moderne statische websites die perfect werken op alle apparaten. 
+                    Ideaal voor bedrijven die een sterke online aanwezigheid willen zonder de complexiteit van een CMS.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MAIN SERVICES -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <!-- Basis Website Pakket -->
+                <div class="pricing-table">
+                    <div class="pricing-table-header">
+                        <i class="bi-globe"></i>
+                        <h3>Basis Website Pakket</h3>
+                    </div>
+                    <div class="pricing-table-body">
+                        <p class="description-text">Complete statische website met 3 pagina's</p>
+                        <div class="price-row">
+                            <span class="service-name">Startprijs (inclusief 3 pagina's)</span>
+                            <span class="service-price">vanaf €500</span>
+                        </div>
+                        
+                        <h5 class="mt-4 mb-3" style="color: #0d1b2a; font-size: 1rem;">Inbegrepen:</h5>
+                        <ul class="feature-list">
+                            <li>3 standaard pagina's (bijv. Home, Over ons, Contact)</li>
+                            <li>Responsive design voor alle apparaten</li>
+                            <li>Moderne, professionele uitstraling</li>
+                            <li>Snelle laadtijden geoptimaliseerd</li>
+                            <li>Basis SEO-optimalisatie</li>
+                            <li>Contact formulier</li>
+                            <li>Google Maps integratie</li>
+                            <li>1 maand gratis kleine aanpassingen</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Extra Pagina's -->
+                <div class="pricing-table">
+                    <div class="pricing-table-header">
+                        <i class="bi-file-earmark-plus"></i>
+                        <h3>Extra Pagina's</h3>
+                    </div>
+                    <div class="pricing-table-body">
+                        <p class="description-text">Uitbreiding van uw website met extra pagina's</p>
+                        <div class="price-row">
+                            <span class="service-name">Per extra pagina</span>
+                            <span class="service-price">€150</span>
+                        </div>
+                        <p class="mt-3 text-muted" style="font-size: 0.9rem;">
+                            Wilt u meer dan 3 pagina's? Geen probleem! Elke extra pagina wordt 
+                            volledig in dezelfde stijl ontwikkeld en geïntegreerd in uw website.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Onderhoudsabonnementen -->
+                <div class="mt-5 mb-5">
+                    <h2 class="text-center mb-4" style="color: #0d1b2a; font-size: 1.8rem;">Website Onderhoudsabonnementen</h2>
+                    <p class="text-center text-muted mb-5">Na de eerste maand gratis aanpassingen kunt u kiezen voor een passend onderhoudsabonnement</p>
+                    
+                    <div class="row g-4">
+                        <!-- Basis Pakket -->
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm border-0" style="transition: all 0.3s ease;">
+                                <div class="card-header text-center py-4" style="background-color: #f8f9fa; border-bottom: 2px solid #e9ecef;">
+                                    <h4 class="mb-0" style="color: #0d1b2a; font-size: 1.2rem;">Basis</h4>
+                                </div>
+                                <div class="card-body text-center">
+                                    <div class="price-display mb-4">
+                                        <span style="font-size: 2.5rem; font-weight: 700; color: #0d1b2a;">€39,99</span>
+                                        <span class="text-muted">/maand</span>
+                                    </div>
+                                    <p class="text-muted mb-4">Perfect voor websites die af en toe een update nodig hebben</p>
+                                    <hr>
+                                    <ul class="list-unstyled text-start">
+                                        <li class="mb-3"><i class="bi-check-circle-fill text-success me-2"></i>Kleine tekstwijzigingen</li>
+                                        <li class="mb-3"><i class="bi-check-circle-fill text-success me-2"></i>Foto's vervangen</li>
+                                        <li class="mb-3"><i class="bi-check-circle-fill text-success me-2"></i>Openingstijden aanpassen</li>
+                                        <li class="mb-3"><i class="bi-check-circle-fill text-success me-2"></i>Max. 2 uur per maand</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer bg-transparent border-0 p-4">
+                                    <a href="contact.html" class="btn btn-outline-primary w-100">Meer info</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Standaard Pakket -->
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow border-0" style="transition: all 0.3s ease; border-top: 3px solid #00cfff;">
+                                <div class="card-header text-center py-4" style="background-color: #e8f6ff; border-bottom: 2px solid #00cfff;">
+                                    <h4 class="mb-0" style="color: #0d1b2a; font-size: 1.2rem;">Standaard</h4>
+                                    <span class="badge bg-info text-dark mt-2">Meest gekozen</span>
+                                </div>
+                                <div class="card-body text-center">
+                                    <div class="price-display mb-4">
+                                        <span style="font-size: 2.5rem; font-weight: 700; color: #0d1b2a;">€49,99</span>
+                                        <span class="text-muted">/maand</span>
+                                    </div>
+                                    <p class="text-muted mb-4">Ideaal voor bedrijven met regelmatige updates</p>
+                                    <hr>
+                                    <ul class="list-unstyled text-start">
+                                        <li class="mb-3"><i class="bi-check-circle-fill text-success me-2"></i>Alles uit Basis</li>
+                                        <li class="mb-3"><i class="bi-check-circle-fill text-success me-2"></i>Nieuwe content toevoegen</li>
+                                        <li class="mb-3"><i class="bi-check-circle-fill text-success me-2"></i>Producten/diensten updates</li>
+                                        <li class="mb-3"><i class="bi-check-circle-fill text-success me-2"></i>Max. 4 uur per maand</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer bg-transparent border-0 p-4">
+                                    <a href="contact.html" class="btn btn-primary w-100" style="background-color: #00cfff; border-color: #00cfff;">Kies dit pakket</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Uitgebreid Pakket -->
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm border-0" style="transition: all 0.3s ease;">
+                                <div class="card-header text-center py-4" style="background-color: #f8f9fa; border-bottom: 2px solid #e9ecef;">
+                                    <h4 class="mb-0" style="color: #0d1b2a; font-size: 1.2rem;">Uitgebreid</h4>
+                                </div>
+                                <div class="card-body text-center">
+                                    <div class="price-display mb-4">
+                                        <span style="font-size: 2.5rem; font-weight: 700; color: #0d1b2a;">€69,99</span>
+                                        <span class="text-muted">/maand</span>
+                                    </div>
+                                    <p class="text-muted mb-4">Voor websites met frequente updates en blog content</p>
+                                    <hr>
+                                    <ul class="list-unstyled text-start">
+                                        <li class="mb-3"><i class="bi-check-circle-fill text-success me-2"></i>Alles uit Standaard</li>
+                                        <li class="mb-3"><i class="bi-check-circle-fill text-success me-2"></i>Blog artikelen plaatsen</li>
+                                        <li class="mb-3"><i class="bi-check-circle-fill text-success me-2"></i>Nieuwsbrieven toevoegen</li>
+                                        <li class="mb-3"><i class="bi-check-circle-fill text-success me-2"></i>Max. 6 uur per maand</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer bg-transparent border-0 p-4">
+                                    <a href="contact.html" class="btn btn-outline-primary w-100">Meer info</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-5">
+                        <p class="text-muted" style="font-size: 0.9rem;">
+                            <i class="bi-info-circle me-2"></i>
+                            Geen abonnement nodig? Losse aanpassingen zijn ook mogelijk tegen ons reguliere uurtarief.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Waarom Statische Websites -->
+                <div class="info-box">
+                    <h4><i class="bi-lightning-charge me-2"></i>Waarom een statische website?</h4>
+                    <p>
+                        Statische websites zijn supersnel, veilig en onderhoudsvriendelijk. 
+                        Ze hebben geen database of CMS nodig, waardoor ze minder kwetsbaar zijn voor hackers 
+                        en geen regelmatige updates vereisen. Perfect voor bedrijven die een professionele 
+                        online aanwezigheid willen zonder technische complexiteit.
+                    </p>
+                </div>
+                
+                <!-- Ontwikkelproces -->
+                <div class="pricing-table">
+                    <div class="pricing-table-header">
+                        <i class="bi-gear"></i>
+                        <h3>Ons Ontwikkelproces</h3>
+                    </div>
+                    <div class="pricing-table-body">
+                        <ol style="color: #6c757d; padding-left: 20px;">
+                            <li style="margin-bottom: 10px;"><strong>Kennismaking:</strong> We bespreken uw wensen en doelen</li>
+                            <li style="margin-bottom: 10px;"><strong>Ontwerp:</strong> We maken een modern design passend bij uw bedrijf</li>
+                            <li style="margin-bottom: 10px;"><strong>Ontwikkeling:</strong> We bouwen uw website met moderne technieken</li>
+                            <li style="margin-bottom: 10px;"><strong>Review:</strong> U geeft feedback, wij passen aan</li>
+                            <li style="margin-bottom: 10px;"><strong>Oplevering:</strong> Uw website gaat live!</li>
+                        </ol>
+                        <div class="alert alert-success mt-4 mb-0" style="font-size: 0.9rem;">
+                            <i class="bi-lightning-charge me-2"></i>
+                            <strong>Snel online!</strong> Een simpele 3-pagina website kan al binnen enkele werkdagen live staan. 
+                            Complexere projecten hebben natuurlijk meer tijd nodig.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hosting & Domein -->
+                <div class="pricing-table">
+                    <div class="pricing-table-header">
+                        <i class="bi-server"></i>
+                        <h3>Hosting & Domein</h3>
+                    </div>
+                    <div class="pricing-table-body">
+                        <p class="description-text">Complete online oplossing inclusief hosting en domeinnaam</p>
+                        <div class="price-row">
+                            <span class="service-name">Hosting & domein registratie</span>
+                            <span class="service-price">Op aanvraag</span>
+                        </div>
+                        
+                        <h5 class="mt-4 mb-3" style="color: #0d1b2a; font-size: 1rem;">Wij regelen alles voor u:</h5>
+                        <ul class="feature-list">
+                            <li>Domeinnaam registratie (.nl, .com, .be, etc.)</li>
+                            <li>Betrouwbare hosting voor uw website</li>
+                            <li>E-mail adressen bij uw domein</li>
+                            <li>SSL certificaat voor veilige verbinding</li>
+                            <li>Dagelijkse backups</li>
+                            <li>Technisch onderhoud en updates</li>
+                        </ul>
+                        
+                        <div class="alert alert-info mt-3 mb-0" style="font-size: 0.9rem;">
+                            <i class="bi-info-circle me-2"></i>
+                            <strong>Interesse?</strong> Neem contact op voor een offerte op maat. 
+                            Wij adviseren u graag over de beste oplossing voor uw situatie.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CUSTOM SERVICES -->
+<section class="custom-service-section">
+    <div class="container">
+        <h2 class="section-title">Interesse in een <u>website</u>?</h2>
+        <p class="lead">Laten we samen kijken hoe we uw bedrijf online kunnen laten stralen.<br>
+        Neem vrijblijvend contact op voor een gesprek over de mogelijkheden.</p>
+        <a href="contact.html" class="btn btn-primary btn-lg" style="background-color: #00cfff; border-color: #00cfff; color: #0d1b2a; font-weight: 600; padding: 12px 40px;">
+            <i class="bi-envelope me-2"></i>Vraag een offerte aan
+        </a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="footer-section">
+                    <h5 class="footer-brand fw-bold text-white mb-4">
+                        Beerkens Computers
+                    </h5>
+                    <div class="footer-info">
+                        <p><i class="bi-geo-alt-fill"></i>Bergweg 4, 5804 BA Venray</p>
+                        <p><i class="bi-envelope-fill"></i>info@beerkenscomputers.nl</p>
+                        <p><i class="bi-building"></i>KVK: 86061984</p>
+                        <p><i class="bi-receipt"></i>BTW: NL004188131B27</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/beerkenscomputers" target="_blank" class="social-icon-link bi-facebook"></a>
+                        <a href="https://wa.me/31629394318" target="_blank" class="social-icon-link bi-whatsapp"></a>
+                        <a href="https://tweakers.net/gallery/298129/aanbod/" target="_blank" class="social-icon-link">
+                            <i class="bi-cpu"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <div class="footer-section">
+                    <h5>Snelle Links</h5>
+                    <ul class="footer-menu">
+                        <li class="footer-menu-item"><a href="index.html" class="footer-menu-link">Home</a></li>
+                        <li class="footer-menu-item"><a href="service.html" class="footer-menu-link">Service</a></li>
+                        <li class="footer-menu-item"><a href="tarieven.html" class="footer-menu-link">Tarieven</a></li>
+                        <li class="footer-menu-item"><a href="webdesign.html" class="footer-menu-link">Webdesign</a></li>
+                        <li class="footer-menu-item"><a href="contact.html" class="footer-menu-link">Contact</a></li>
+                        <li class="footer-menu-item"><a href="voorwaarden.html" class="footer-menu-link">Algemene Voorwaarden</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <div class="footer-section">
+                    <h5>Openingstijden</h5>
+                    <ul class="footer-menu">
+                        <li class="footer-menu-item">
+                            <span style="color: #b8c5d6;">Uitsluitend op afspraak</span>
+                        </li>
+                    </ul>
+                    <p style="color: #b8c5d6; margin-top: 20px;">
+                        <i class="bi-info-circle me-2"></i>Neem contact op voor het maken van een afspraak
+                    </p>
+                    <div class="mt-4 p-3 rounded" style="background-color: rgba(0, 207, 255, 0.1);">
+                        <p style="color: #00cfff; margin-bottom: 5px; font-weight: 600;">
+                            <i class="bi-star-fill me-1"></i> 4.9 uit 5 sterren
+                        </p>
+                        <p style="color: #b8c5d6; margin-bottom: 0; font-size: 0.9rem;">
+                            Gebaseerd op 524 beoordelingen
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2491.8946784847!2d5.9716!3d51.5276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c74e80d8b5cf39%3A0x0!2sBergweg%204%2C%205804%20BA%20Venray!5e0!3m2!1snl!2snl!4v1" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Beerkens Computers | Alle rechten voorbehouden</p>
+        </div>
+    </div>
+</footer>
+
+<!-- JAVASCRIPT FILES -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Simpele JavaScript zonder jQuery
+document.addEventListener('DOMContentLoaded', function() {
+    // Verwijder alle active classes en zet alleen op Webdesign
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+    
+    const webdesignLink = document.querySelector('.navbar-nav .nav-link[href="webdesign.html"]');
+    if (webdesignLink) {
+        webdesignLink.classList.add('active');
+    }
+    
+    // Sluit mobiel menu na klikken op link
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navbarCollapse.classList.contains('show')) {
+                navbarCollapse.classList.remove('show');
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>

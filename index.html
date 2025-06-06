@@ -3,21 +3,59 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Beerkens Computers - De specialist voor uw computer en laptop in Venray.">
+    <meta name="description" content="Beerkens Computers - De specialist voor uw computer en laptop in Venray. Refurbished experts met persoonlijke service.">
     <meta name="author" content="Beerkens Computers">
     <title>Beerkens Computers - De specialist voor uw computer en laptop</title>
+    
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-icons.css" rel="stylesheet">
-    <link href="css/templatemo-leadership-event.css" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    
     <style>
         /* Extra styling */
         .navbar-brand img {
             height: 40px;
             width: auto;
+        }
+        
+        /* Custom hamburger menu styling */
+        .navbar-toggler {
+            border: none;
+            padding: 4px 12px;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        /* Fallback hamburger icon */
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        /* Mobile menu styling */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background-color: white;
+                padding: 20px;
+                margin-top: 10px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                border-radius: 10px;
+            }
+            
+            .navbar-nav .nav-link {
+                padding: 10px 0 !important;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            
+            .navbar-nav .nav-link:last-child {
+                border-bottom: none;
+            }
         }
         
         .site-footer {
@@ -144,13 +182,14 @@
         }
         
         .hero {
-            background: url('images/computer-repair.jpg') center center / cover no-repeat;
+            background: linear-gradient(rgba(13,27,42,0.85), rgba(13,27,42,0.85)), url('images/computer-repair.jpg') center center / cover no-repeat;
             height: 80vh;
             color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
+            background-color: #0d1b2a;
         }
         
         .hero-content {
@@ -274,23 +313,31 @@
             padding: 10px 20px !important;
             transition: all 0.3s ease;
             position: relative;
+            display: inline-block;
         }
         
         .nav-link::after {
             content: '';
             position: absolute;
             bottom: 5px;
-            left: 50%;
-            width: 0;
+            left: 20px;
+            right: 20px;
+            width: auto;
             height: 2px;
             background-color: #00cfff;
             transition: all 0.3s ease;
-            transform: translateX(-50%);
+            transform: scaleX(0);
+            transform-origin: center;
         }
         
         .nav-link:hover::after,
         .nav-link.active::after {
-            width: 60%;
+            transform: scaleX(1);
+        }
+        
+        /* Force active state */
+        .navbar-nav .nav-item .nav-link.active::after {
+            transform: scaleX(1) !important;
         }
         
         .usp-section {
@@ -395,6 +442,85 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             height: 300px;
         }
+        
+        /* Persoonlijke service sectie */
+        .personal-service-section {
+            background-color: #ffffff;
+            padding: 80px 0;
+        }
+        
+        .service-highlight {
+            background: linear-gradient(135deg, #e8f6ff 0%, #d1edff 100%);
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .service-highlight h3 {
+            color: #0d1b2a;
+            margin-bottom: 20px;
+        }
+        
+        /* Refurbished sectie */
+        .refurbished-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+        
+        .eco-card {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            height: 100%;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .eco-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .eco-card i {
+            font-size: 3rem;
+            color: #00cfff;
+            margin-bottom: 20px;
+        }
+        
+        .stat-box {
+            background: linear-gradient(135deg, #00cfff 0%, #0099ff 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .stat-box h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        /* Responsive aanpassingen */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .hero-content {
+                padding: 40px 30px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -402,13 +528,14 @@
 <a href="https://wa.me/31629394318" target="_blank" class="whatsapp-btn">
     <i class="bi-whatsapp"></i>
 </a>
+
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
         <a class="navbar-brand" href="#section_1">
-            <img src="images/logo.jpg" alt="Beerkens Computers">
+            <img src="images/logo.jpg" alt="Beerkens Computers" style="height: 40px;">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -423,49 +550,229 @@
                     <a class="nav-link" href="tarieven.html">Tarieven</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="webdesign.html">Webdesign</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="contact.html">Contact</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
 <!-- HERO -->
 <section class="hero" id="section_1">
     <div class="hero-content">
         <h1>DE SPECIALIST VOOR UW COMPUTER EN LAPTOP</h1>
-        <p>REPARATIE • VERKOOP • INSTALLATIE • ADVIES</p>
+        <p>REPARATIE • VERKOOP • INSTALLATIE • ADVIES • WEBDESIGN</p>
     </div>
 </section>
+
 <!-- USP BLOKKEN -->
 <section class="py-5 usp-section" id="usp">
     <div class="container">
         <div class="row">
             <div class="col-md-4 mb-3">
                 <div class="usp-item">
-                    <i class="bi-truck display-4 mb-3"></i>
-                    <h5><strong>Snelle verzending</strong></h5>
-                    <p>Binnen 24 uur verzonden</p>
+                    <i class="bi-calendar-check display-4 mb-3"></i>
+                    <h5><strong>Op afspraak</strong></h5>
+                    <p>Persoonlijke aandacht voor elke klant</p>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="usp-item">
-                    <i class="bi-shield-check display-4 mb-3"></i>
-                    <h5><strong>Garantie</strong></h5>
-                    <p>Altijd garantie op uw aankoop</p>
+                    <i class="bi-recycle display-4 mb-3"></i>
+                    <h5><strong>Duurzaam</strong></h5>
+                    <p>Specialist in refurbished apparatuur</p>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="usp-item">
-                    <i class="bi-chat-dots display-4 mb-3"></i>
-                    <h5><strong>Tevredenheidsgarantie</strong></h5>
-                    <p>Persoonlijk en snel contact</p>
+                    <i class="bi-award display-4 mb-3"></i>
+                    <h5><strong>15+ jaar ervaring</strong></h5>
+                    <p>Vakkundig advies en service</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- PERSOONLIJKE SERVICE -->
+<section class="personal-service-section" id="persoonlijke-service">
+    <div class="container">
+        <h2 class="section-title">Persoonlijke <u>Service</u></h2>
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="service-highlight">
+                    <h3><i class="bi-people me-2 text-primary"></i>Een kleine gedreven onderneming</h3>
+                    <p>Als kleine, gedreven onderneming kunnen wij onze klanten de persoonlijke aandacht geven die ze verdienen. Bij ons geen haastwerk of doorschuifsysteem, maar oprechte interesse in uw wensen en behoeften.</p>
+                    <p>We nemen uitgebreid de tijd om uw situatie te begrijpen en samen tot de beste oplossing te komen. Of het nu gaat om een reparatie, nieuwe aanschaf of advies - u krijgt altijd onze volledige aandacht.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="service-highlight">
+                    <h3><i class="bi-clock-history me-2 text-primary"></i>Uitsluitend op afspraak</h3>
+                    <p>Wij werken bewust uitsluitend op afspraak. Waarom? Omdat we vinden dat elke klant de tijd en aandacht verdient die nodig is. Geen wachttijden, geen stress - gewoon een rustig gesprek waarin we al uw vragen kunnen beantwoorden.</p>
+                    <p>Door op afspraak te werken kunnen we ons volledig op u concentreren, zonder onderbrekingen. Zo krijgt u gegarandeerd de service die u verdient en gaat u met de juiste oplossing naar huis.</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="contact.html" class="btn btn-primary btn-lg" style="background-color: #00cfff; border-color: #00cfff; color: #0d1b2a;">
+                <i class="bi-calendar-plus me-2"></i>Maak een afspraak
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- REFURBISHED SPECIALIST -->
+<section class="refurbished-section" id="refurbished">
+    <div class="container">
+        <h2 class="section-title">Refurbished <u>Specialist</u></h2>
+        
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <p class="lead">
+                    Waarom meer betalen voor nieuw als refurbished net zo goed is? Als specialist in refurbished computers en laptops 
+                    helpen we u niet alleen geld te besparen, maar dragen we ook bij aan een duurzamere wereld.
+                </p>
+            </div>
+        </div>
+        
+        <div class="row g-4 mb-5">
+            <div class="col-md-3">
+                <div class="eco-card">
+                    <i class="bi-piggy-bank"></i>
+                    <h4>Tot 70% besparing</h4>
+                    <p>Premium kwaliteit voor een fractie van de nieuwprijs</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="eco-card">
+                    <i class="bi-shield-check"></i>
+                    <h4>Volledig getest</h4>
+                    <p>Elk apparaat wordt grondig gecontroleerd en gereinigd</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="eco-card">
+                    <i class="bi-leaf"></i>
+                    <h4>Milieuvriendelijk</h4>
+                    <p>Geef hardware een tweede leven en verminder e-waste</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="eco-card">
+                    <i class="bi-award"></i>
+                    <h4>Garantie</h4>
+                    <p>3 maanden garantie op alle refurbished producten</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <h3 class="mb-4">Geen concessies aan kwaliteit</h3>
+                <p>Veel mensen denken dat refurbished betekent dat je inlevert op kwaliteit. Niets is minder waar! Onze refurbished computers en laptops worden:</p>
+                <ul>
+                    <li>Volledig technisch gecontroleerd</li>
+                    <li>Professioneel gereinigd (binnen en buiten)</li>
+                    <li>Voorzien van een verse Windows installatie</li>
+                    <li>Uitgebreid getest op alle functies</li>
+                    <li>Alleen goedgekeurd bij 100% werking</li>
+                </ul>
+                <p>Het resultaat? Een computer die er niet alleen goed uitziet, maar ook als nieuw presteert - tegen een veel scherpere prijs.</p>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <div class="stat-box">
+                            <h2>1500+</h2>
+                            <p class="mb-0">Tevreden klanten</p>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <div class="stat-box">
+                            <h2>2000+</h2>
+                            <p class="mb-0">Apparaten gered</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="alert alert-info">
+                    <h5 class="alert-heading"><i class="bi-lightbulb me-2"></i>Wist u dat?</h5>
+                    <p class="mb-0">Door te kiezen voor refurbished bespaart u gemiddeld 85% CO2-uitstoot vergeleken met een nieuw apparaat. 
+                    Samen maken we het verschil!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ONZE DIENSTEN -->
+<section class="py-5" id="diensten">
+    <div class="container">
+        <h2 class="section-title">Onze <u>Diensten</u></h2>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi-tools"></i>
+                    </div>
+                    <h3>Reparatie & Onderhoud</h3>
+                    <p>Van hardware-upgrades tot virusverwijdering. Wij lossen elk computerprobleem op met vakmanschap en zorg.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi-pc-display"></i>
+                    </div>
+                    <h3>Verkoop Computers</h3>
+                    <p>Nieuwe en refurbished computers en laptops. Voor elk budget hebben wij de perfecte oplossing.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi-windows"></i>
+                    </div>
+                    <h3>Software Installatie</h3>
+                    <p>Windows installatie, drivers, antivirus en meer. Uw computer wordt gebruiksklaar opgeleverd.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi-joystick"></i>
+                    </div>
+                    <h3>Gaming PC's</h3>
+                    <p>Op maat samengestelde gaming computers. Van budget gaming tot high-end powerhouses.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi-globe"></i>
+                    </div>
+                    <h3>Webdesign</h3>
+                    <p>Moderne, snelle websites die perfect werken op alle apparaten. Professioneel en betaalbaar.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi-headset"></i>
+                    </div>
+                    <h3>Advies & Support</h3>
+                    <p>Eerlijk advies zonder verkooppraatjes. We denken met u mee over de beste oplossing.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- OVER ONS -->
-<section class="py-5" id="over-ons">
+<section class="py-5 bg-light" id="over-ons">
     <div class="container">
         <h2 class="section-title">Over <u>Ons</u></h2>
         <div class="row align-items-center">
@@ -478,6 +785,7 @@
                             <h4 class="mb-3">Onze Expertise</h4>
                             <p>Beerkens Computers is gespecialiseerd in de inkoop en verkoop van computers en laptops. Of u nu op zoek bent naar een gloednieuwe gaming PC, een betrouwbare werkcomputer of een betaalbare refurbished laptop, wij hebben voor ieder budget en elke behoefte de perfecte oplossing.</p>
                             <p>Naast verkoop bieden wij professionele reparatiediensten voor zowel computers als laptops. Van hardware-upgrades tot het oplossen van softwareproblemen, ons ervaren team staat voor u klaar.</p>
+                            <p class="mt-3"><strong>Nieuw:</strong> Ook voor professionele webdesign bent u bij ons aan het juiste adres. Wij ontwikkelen moderne, snelle websites die perfect werken op alle apparaten.</p>
                         </div>
                         <div class="col-md-6 mb-4">
                             <h4 class="mb-3">Waarom Kiezen voor Beerkens?</h4>
@@ -488,11 +796,13 @@
                                 <li class="mb-2"><i class="bi-check-circle-fill text-primary me-2"></i> Uitgebreide garantie op alle producten</li>
                                 <li class="mb-2"><i class="bi-check-circle-fill text-primary me-2"></i> Snelle en vakkundige reparaties</li>
                                 <li class="mb-2"><i class="bi-check-circle-fill text-primary me-2"></i> Volledige software-installatie service</li>
+                                <li class="mb-2"><i class="bi-check-circle-fill text-primary me-2"></i> Professionele webdesign diensten</li>
+                                <li class="mb-2"><i class="bi-check-circle-fill text-primary me-2"></i> Specialist in refurbished apparatuur</li>
                             </ul>
                         </div>
                     </div>
                     
-                    <div class="text-center mt-5 p-4 bg-light rounded">
+                    <div class="text-center mt-5 p-4 bg-white rounded shadow-sm">
                         <h4 class="mb-3">Klantbeoordeling</h4>
                         <div class="rating-info">
                             <div class="d-flex justify-content-center align-items-center mb-2">
@@ -509,14 +819,15 @@
                         </div>
                     </div>
                     
-                    <p class="text-center mt-4">Bij Beerkens Computers draait alles om kwaliteit, betrouwbaarheid en persoonlijke service. We nemen de tijd voor elke klant en zorgen ervoor dat u met de juiste oplossing naar huis gaat. Of het nu gaat om een nieuwe aanschaf, een reparatie of advies, u bent bij ons aan het juiste adres!</p>
+                    <p class="text-center mt-4">Bij Beerkens Computers draait alles om kwaliteit, betrouwbaarheid en persoonlijke service. We nemen de tijd voor elke klant en zorgen ervoor dat u met de juiste oplossing naar huis gaat. Of het nu gaat om een nieuwe aanschaf, een reparatie, advies of een nieuwe website, u bent bij ons aan het juiste adres!</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 <!-- KLANTBEOORDELINGEN -->
-<section class="py-5 bg-light" id="beoordelingen">
+<section class="py-5" id="beoordelingen">
     <div class="container">
         <h2 class="section-title">Wat onze klanten <u>zeggen</u></h2>
         <div class="row g-4">
@@ -573,6 +884,7 @@
         </div>
     </div>
 </section>
+
 <!-- FOOTER -->
 <footer class="site-footer">
     <div class="container">
@@ -605,6 +917,7 @@
                         <li class="footer-menu-item"><a href="#section_1" class="footer-menu-link">Home</a></li>
                         <li class="footer-menu-item"><a href="service.html" class="footer-menu-link">Service</a></li>
                         <li class="footer-menu-item"><a href="tarieven.html" class="footer-menu-link">Tarieven</a></li>
+                        <li class="footer-menu-item"><a href="webdesign.html" class="footer-menu-link">Webdesign</a></li>
                         <li class="footer-menu-item"><a href="contact.html" class="footer-menu-link">Contact</a></li>
                         <li class="footer-menu-item"><a href="voorwaarden.html" class="footer-menu-link">Algemene Voorwaarden</a></li>
                     </ul>
@@ -654,18 +967,33 @@
         </div>
     </div>
 </footer>
+
 <!-- JAVASCRIPT FILES -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.sticky.js"></script>
-<script src="js/click-scroll.js"></script>
-<script src="js/custom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-// Verwijder alle active classes en zet alleen op Home
-$(document).ready(function() {
-    $('.navbar-nav .nav-link').removeClass('active');
-    $('.navbar-nav .nav-link[href="#section_1"]').addClass('active');
+// Simpele JavaScript zonder jQuery
+document.addEventListener('DOMContentLoaded', function() {
+    // Verwijder alle active classes en zet alleen op Home
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+    
+    const homeLink = document.querySelector('.navbar-nav .nav-link[href="#section_1"]');
+    if (homeLink) {
+        homeLink.classList.add('active');
+    }
+    
+    // Sluit mobiel menu na klikken op link
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navbarCollapse.classList.contains('show')) {
+                navbarCollapse.classList.remove('show');
+            }
+        });
+    });
 });
 </script>
 

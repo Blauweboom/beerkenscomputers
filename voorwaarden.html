@@ -3,10 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <meta name="description" content="Beerkens Computers - Algemene voorwaarden en servicevoorwaarden.">
     <meta name="author" content="Beerkens Computers">
-
     <title>Algemene Voorwaarden - Beerkens Computers</title>
 
     <!-- CSS FILES -->
@@ -14,15 +12,50 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-icons.css" rel="stylesheet">
-    <link href="css/templatemo-leadership-event.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
         /* Extra styling */
         .navbar-brand img {
             height: 40px;
             width: auto;
+        }
+        
+        /* Custom hamburger menu styling */
+        .navbar-toggler {
+            border: none;
+            padding: 4px 12px;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        /* Fallback hamburger icon */
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        /* Mobile menu styling */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background-color: white;
+                padding: 20px;
+                margin-top: 10px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                border-radius: 10px;
+            }
+            
+            .navbar-nav .nav-link {
+                padding: 10px 0 !important;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            
+            .navbar-nav .nav-link:last-child {
+                border-bottom: none;
+            }
         }
         
         .site-footer {
@@ -193,28 +226,31 @@
             padding: 10px 20px !important;
             transition: all 0.3s ease;
             position: relative;
+            display: inline-block;
         }
         
         .nav-link::after {
             content: '';
             position: absolute;
             bottom: 5px;
-            left: 50%;
-            width: 0;
+            left: 20px;
+            right: 20px;
+            width: auto;
             height: 2px;
             background-color: #00cfff;
             transition: all 0.3s ease;
-            transform: translateX(-50%);
+            transform: scaleX(0);
+            transform-origin: center;
         }
         
         .nav-link:hover::after,
         .nav-link.active::after {
-            width: 60%;
+            transform: scaleX(1);
         }
         
         /* Force active state */
         .navbar-nav .nav-item .nav-link.active::after {
-            width: 60% !important;
+            transform: scaleX(1) !important;
         }
         
         .whatsapp-btn {
@@ -315,6 +351,17 @@
             color: #00cfff;
             margin-right: 10px;
         }
+        
+        /* Responsive aanpassingen */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 
@@ -331,7 +378,7 @@
         <a class="navbar-brand" href="index.html">
             <img src="images/logo.jpg" alt="Beerkens Computers">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -344,6 +391,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="tarieven.html">Tarieven</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="webdesign.html">Webdesign</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact.html">Contact</a>
@@ -458,6 +508,7 @@
                         <li class="footer-menu-item"><a href="index.html" class="footer-menu-link">Home</a></li>
                         <li class="footer-menu-item"><a href="service.html" class="footer-menu-link">Service</a></li>
                         <li class="footer-menu-item"><a href="tarieven.html" class="footer-menu-link">Tarieven</a></li>
+                        <li class="footer-menu-item"><a href="webdesign.html" class="footer-menu-link">Webdesign</a></li>
                         <li class="footer-menu-item"><a href="contact.html" class="footer-menu-link">Contact</a></li>
                         <li class="footer-menu-item"><a href="voorwaarden.html" class="footer-menu-link">Algemene Voorwaarden</a></li>
                     </ul>
@@ -509,16 +560,14 @@
 </footer>
 
 <!-- JAVASCRIPT FILES -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.sticky.js"></script>
-<script src="js/click-scroll.js"></script>
-<script src="js/custom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
 // Geen active state voor algemene voorwaarden
-$(document).ready(function() {
-    $('.navbar-nav .nav-link').removeClass('active');
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+        link.classList.remove('active');
+    });
 });
 </script>
 
